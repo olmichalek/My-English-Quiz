@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<style>
+body {
+
+background-color: aquamarine;
+
+}
+
+.quizz {
+
+font-size: 28pt;
+text-align: center; 
+font-weight: black; 
+color: black; 
+padding-bottom: 0;
+margin-bottom: 0; 
+}
+
+h1 {
+font-family: Lato;
+font-size: 24pt; 
+color: purple;
+font-weight: bold; 
+
+}
+
+
+#after_submit {
+	background-color: skyblue; 
+	visibility: hidden;
+	width: 800px;
+	height: auto; 
+	border: solid black 1px; 
+	margin: 0 auto; 
+	padding-left: 50px; 
+	
+}
+
+#magic {
+	background-color: skyblue; 
+	width: 800px;
+	height: auto;
+	border: solid black 1px; 
+	margin: 0 auto; 
+	visibility: visible;
+	padding-left: 50px; 
+
+ 
+}
+	
+}
+
+#number_correct {
+	font-family: Lato; 
+	font-size: 22pt; 
+	font-weight: bold; 
+	margin: 20px 0 0 0; 
+	
+}
+
+#message {
+	
+	font-size: 16pt; 
+	margin-top: 0; 
+	margin-bottom: 0; 
+	
+}
+
+#button {
+width: 220px;
+height: 70px; 
+text-align: center;
+margin-top: 0px; 	
+background: green;
+border: none; 
+border-radius: 5px; 
+padding: 10px; 
+color: white; 
+font-size: 24px; 
+transition-duration: 3s;
+margin-bottom: 30px; 
+margin-top: 20px; 
+
+
+}
+
+#button:hover {
+	background: white; 
+	border: 1px solid gren;
+	color: black;
+	cursor: pointer; 
+}
+
+#picture {
+	width: 200px;
+	height: 150px; 
+	margin-top: 0;  
+	margin-bottom: 20px; 
+	text-align: center; 
+}
+
+#timer {
+	font-size: 18pt;
+	
+}
+
+#textbox {
+
+width: 180px; 
+height: 30px; 
+font-size: 16pt; 
+}
+	
+#textbox:focus {
+	background: yellow;
+}
+	
+p {
+
+font-size: 16pt;
+font-weight: bold; 
+
+}
+
+.mojeradio {
+
+font-size: 14pt;
+color: grey; 
+
+}
+
+#mycounter {
+position: fixed;
+top: 0;
+right: 0;
+width: 150px;
+height: 100px;
+border: solid black 2px; 
+font-size: 12pt;
+margin-bottom: 20px; 
+margin-top: 350px;
+margin-right: 250px;
+padding-left: 10px;
+padding-top: 8px; 
+
+}
+</style>
+
+</head>
+
+<div id= "mycounter"><p id="glesiu" style="font-size: 17pt; font-weight: bold; margin: 0; color: red;">Your time:</p><br> <p id="dupa" style="float: left; margin-right: 5px; margin-top: 0; ">0</p> <p style="padding-left: 8px; margin-top: 0;">sec</p></div><br><br>
+<script>
+var myCount = setInterval(myTimer, 1000);
+
+const myCounter = document.getElementById("dupa");  
+
+let count = 0; 
+
+function myTimer() {
+
+count += 1; 
+myCounter.textContent = count; 
+
+
+if (count >= 120) {
+
+if(!alert("GAME OVER!!! You're too slow! Try a little faster!")){window.location.reload();}
+
+}
+
+}
+
+
+</script>
+<div id="magic">
+<h2 class="quizz">My English quiz</h2>
+<h1>
+How much do you remember from your English classes? 
+</h1>
+<label style= "font-weight: bold; font-size: 15pt;">What's your name?
+<input type="text" id="textbox" name="myName">
+</label>
+<body> 
+<form id="quiz" name="quiz">
+<p>1) What's the name of the paper invented by ancient Egyptians?</p>
+<span class="mojeradio"><input type="radio" id="mc" value="true" name="question1" />Papyrus<br> 
+<input type="radio" id="mc" value="Narew" name="question1" />Parchment<br>
+<input type="radio" id="mc" value="Narew" name="question1" />Hieroglyphs<br></span>
+
+<p>2) What might give city a buzz?</p>
+<span class="mojeradio"><input type="radio" id="mc" value="Bacteria and viruses" name="question2" />Building a new bypass<br> 
+<input type="radio" id="mc" value="Narew" name="question2" />Reducing job vacancies<br>
+<input type="radio" id="mc" value="true" name="question2" />Lots of new galleries<br></span>
+
+<p>3) The salary isn't very high but I like my job as they offer many _________ such as company car
+and free health insurance.</p>
+<span class="mojeradio"><input type="radio" id="mc" name="question3" value="true">Perks<br>
+<input type="radio" id="mc" name="question3" value="false">Bonuses<br>
+<input type="radio" id="mc" name="question3" value="China">Wages<br></span>
+<br>
+<p>4) Which one of these is <b>not</b> invention of ancient China?</p>
+<span class="mojeradio"><input type="radio" id="mc" value="Paper making" name="question4" />Paper making<br> 
+<input type="radio" id="mc" value="true" name="question4" />Aqueducts<br>
+<input type="radio" id="mc" value="Narew" name="question4" />Earthquake detector<br></span>
+
+<p>5) How would you recognize Spring Heeled Jack?</p>
+<span class="mojeradio"><input type="radio" id="mc" name="question5" value="India">He was tall and had vampire teeth<br>
+<input type="radio" id="mc" value="true" name="question5" />He was a cloaked figure and often blew flames<br>
+<input type="radio" id="mc" name="question5" value="I went to Thailand">Had horns at the back of his head<br></span>
+<br>
+<p>6) What can you expect from a condemned building?</p>
+<span class="mojeradio"><input type="radio" id="mc" value="true" name="question6" />It's destined for demolition<br> 
+<input type="radio" id="mc" value="Narew" name="question6" />It's old but important for the culture<br>
+<input type="radio" id="mc" value="tr" name="question6" />It's believed to be haunted<br></span>
+<p>7) Scientists can sometimes predict the future while psychics</p>
+<span class="mojeradio"><input type="radio" id="mc" name="question7" value="India">forebear<br>
+<input type="radio" id="mc" name="question7" value="China">forbid<br>
+<input type="radio" id="mc" value="true" name="question7" />foretell<br></span>
+<br>
+<p>8) Which day is specially important for British culture?</p>
+<span class="mojeradio"><input type="radio" id="mc" value="Wisla" name="question8" />St. Bonaventure's Day<br> 
+<input type="radio" id="mc" value="They're" name="question8" />St. Peter's Day<br>
+<input type="radio" id="mc" value="true" name="question8" />St. George's Day<br></span>
+<p>9) What does term "lingua franca" mean?</p>
+<span class="mojeradio"><input type="radio" id="mc" name="question9" value="India">French dialect <br>
+<input type="radio" id="mc" name="question9" value="true">International language<br>
+<input type="radio" id="mc" value="Narew" name="question9" />Frankly way of speaking<br></span>
+<br>
+<p>10) People can't breathe on Mars because there is no:</p>
+<span class="mojeradio"><input type="radio" id="mc" name="question10" value="India">Carbon<br>
+<input type="radio" id="mc" name="question10" value="China">Nitrogen<br>
+<input type="radio" id="mc" value="true" name="question10" />Oxygen<br></span>
+<br>
+<input id="button" type = "button" onclick="check(); myStopFunction();" value = "Check your score"/>
+
+</form>
+</div>
+<div id="after_submit">
+<h2 id="hello" style="font-family:Arial; color: purple; font-size: 20pt;"></h2>
+<p id="number_correct" style="color: orange; font-weight: bold; font-size: 18pt;"></p><br>
+<p id="message" style="font-style: italic; font-family: Lato;"></p><br><br>
+<img id="picture"><br>
+<a href="QUIZforMTI.html"><input id="button" type = "button" value = "Try again"/></a>
+</div>
+<script>
+function check() {
+
+var welcome = document.getElementById("textbox").value; 
+document.getElementById("hello").innerHTML = "Hello " + welcome; 
+
+var question1 = document.quiz.question1.value;
+var question2 = document.quiz.question2.value;
+var question3 = document.quiz.question3.value;
+var question4 = document.quiz.question4.value;
+var question5 = document.quiz.question5.value;
+var question6 = document.quiz.question6.value;
+var question7 = document.quiz.question7.value;
+var question8 = document.quiz.question8.value;
+var question9 = document.quiz.question9.value;
+var question10 = document.quiz.question10.value;
+var correct = 0; 
+
+if (question1 == "true") {
+	correct++; 
+}
+if (question2 == "true") {
+	correct++; 
+}
+
+if (question3 == "true") {
+	correct++; 
+}
+
+if (question4 == "true") {
+	correct++; 
+}
+
+if (question5 == "true") {
+	correct++; 
+}
+
+if (question6 == "true") {
+	correct++; 
+}
+
+if (question7 == "true") {
+	correct++; 
+}
+
+if (question8 == "true") {
+	correct++; 
+}
+
+if (question9 == "true") {
+	correct++; 
+}
+
+if (question10 == "true") {
+	correct++; 
+}
+
+var messages =["Wow! You're a genius! English is a piece of cake for you", "Well-done, you were my good student and you remember a lot from our classes!", "Just so-so, consider reviewing", "Are you kidding me? Did you forget everything we learnt? "];
+
+var pictures = ["https://media.tenor.com/images/0561176a31daf989e09ea93b2948310b/tenor.gif", "https://media.tenor.com/images/ddc640ed6e42876db9e9ae1c8e6c9e0a/tenor.gif", "https://media.tenor.com/images/b76062369ba9daeb668f4e6f56e29b9b/tenor.gif", "https://media.tenor.com/images/468a77e068878c999cbfa5fa65824e01/tenor.gif"]; 
+
+var range;
+
+if (correct <3) {
+	range = 3;
+}
+
+if (correct >= 3 && correct < 6) {
+	range = 2;
+	
+}
+
+if (correct >= 6 && correct < 9) {
+	range = 1;
+	
+}
+
+
+if (correct >= 9) {
+	range = 0;
+	
+}
+
+document.getElementById("after_submit").style.visibility = "visible";
+
+document.getElementById("magic").style.display = "none";
+
+
+document.getElementById("number_correct").innerHTML = "You got " + correct + "/10 answers correct.";
+
+document.getElementById("message").innerHTML = messages[range];
+
+document.getElementById("picture").src = pictures[range];
+}
+
+
+function myStopFunction() {
+  clearInterval(myCount);
+  document.getElementById("glesiu").innerHTML = "Finished in:"; 
+}
+
+</script>
+
+</body>
+</html>
